@@ -6,14 +6,11 @@ export interface ButtonProps {
   onClick?: () => void;
 }
 
-export const Button = ({
-  label,
-  ...props
-}: ButtonProps) => {
+export const Button = ({ label, ...props }: ButtonProps) => {
   return (
     <button
       type="button"
-      className="flex items-center px-4 min-h-12 bg-blue-500 text-white rounded-md hover:bg-blue-300 overflow-wrap break-word"
+      className="overflow-wrap break-word flex min-h-12 items-center rounded-md bg-blue-500 px-4 text-white hover:bg-blue-300"
       {...props}
     >
       {label}

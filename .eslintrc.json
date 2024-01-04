@@ -1,0 +1,80 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true,
+    "jest": true
+  },
+
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.base.json"
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb",
+    "airbnb-typescript",
+    "plugin:tailwindcss/recommended",
+    "plugin:jest-dom/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["tailwindcss", "jest-dom"],
+  "ignorePatterns": ["./node_modules/*", "./.next/*", "./out/*", "./public/*"],
+  "rules": {
+    "no-alert": "off",
+    "no-new": "off",
+    "no-useless-escape": "off",
+    "no-useless-catch": "off",
+    "react/require-default-props": "off",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "react-hooks/exhaustive-deps": "off",
+    "react/jsx-props-no-spreading": 0,
+    "react/prop-types": "off",
+    "react/function-component-definition": 0,
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "react/jsx-filename-extension": ["warn", { "extensions": [".ts", ".tsx"] }],
+    "react/jsx-no-useless-fragment": "off",
+    "react/no-array-index-key": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "jsx-a11y/label-has-associated-control": [2, { "labelAttributes": ["htmlFor"] }],
+    "tailwindcss/classname-order": "off",
+    "tailwindcss/no-custom-classname": "off",
+    "import/prefer-default-export": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "type", "unknown"],
+        "pathGroups": [
+          {
+            "pattern": "{next*,next*/**}",
+            "group": "builtin",
+            "position": "after"
+          },
+          {
+            "pattern": "{react*,react*/**}",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "**/*.svg",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "@/**",
+            "group": "internal",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["next", "react", "**/*.svg", "@/**"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "newlines-between": "always"
+      }
+    ]
+  }
+}
