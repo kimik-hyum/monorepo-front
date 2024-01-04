@@ -25,6 +25,7 @@
     "no-alert": "off",
     "no-new": "off",
     "no-useless-escape": "off",
+    "no-promise-executor-return": "off",
     "no-useless-catch": "off",
     "react/require-default-props": "off",
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],

@@ -1,19 +1,19 @@
+import { expect } from "@storybook/jest";
+import { within, userEvent } from "@storybook/testing-library";
 
-import type { Meta, StoryObj } from '@storybook/react';
-import { within, userEvent } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { Button } from "@/stories/Button";
 
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { Button } from './Button';
 const meta = {
-  title: 'Example/Button',
+  title: "Example/Button",
   component: Button,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: { control: "color" },
   },
 } satisfies Meta<typeof Button>;
 
@@ -23,12 +23,12 @@ type Story = StoryObj<typeof Button>;
 export const ButtnUnit: Story = {
   args: {
     primary: true,
-    label: 'Button',
+    label: "Button",
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    
-    const button = await canvas.getByRole('button', { name: /Button/i });
+
+    const button = await canvas.getByRole("button", { name: /Button/i });
 
     await userEvent.hover(button);
 

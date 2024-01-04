@@ -13,6 +13,10 @@
   },
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "typescript.enablePromptUseWorkspaceTsdk": true,
+  "eslint.workingDirectories": [
+    { "directory": "apps/front", "changeProcessCWD": true },
+    { "directory": "apps/design-system", "changeProcessCWD": true }
+  ],
   "editor.quickSuggestions": {
     "strings": true
   },
