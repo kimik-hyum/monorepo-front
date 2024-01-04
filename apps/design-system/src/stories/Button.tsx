@@ -1,4 +1,4 @@
-interface ButtonProps {
+export interface ButtonProps {
   primary?: boolean;
   backgroundColor?: string;
   size?: "small" | "medium" | "large";
@@ -13,7 +13,7 @@ export const Button = ({
   return (
     <button
       type="button"
-      className="flex items-center px-4 h-12 bg-blue-500 text-white rounded-md"
+      className="flex items-center px-4 min-h-12 bg-blue-500 text-white rounded-md hover:bg-blue-300 overflow-wrap break-word"
       {...props}
     >
       {label}
