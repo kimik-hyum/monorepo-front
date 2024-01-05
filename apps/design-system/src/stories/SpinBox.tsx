@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 
 import { Button } from './Button'
 
@@ -11,13 +11,17 @@ export interface Props {
 export const SpinBox: React.FC<Props> = ({ min = 0, defaultValue = min || 0, max }) => {
   const [count, setCount] = useState(defaultValue)
 
+  useEffect(() => {
+    setCount(defaultValue)
+  }, [min, defaultValue, max])
+
   const handleIncrement = useCallback(() => {
-    setCount((prev) => (max !== undefined && prev >= max ? prev : prev + 1))
-  }, [])
+    setCount((prev) => (max && prev >= max ? prev : prev + 1))
+  }, [max])
 
   const handleDecrement = useCallback(() => {
     setCount((prev) => (prev > min ? prev - 1 : prev))
-  }, [])
+  }, [min])
 
   return (
     <>
