@@ -1,5 +1,6 @@
 {
   "parserOptions": {
     "project": "./tsconfig.json"
-  }
+  },
+  "ignorePatterns": ["node_modules", "dist", "tailwind.config.js"]
 }

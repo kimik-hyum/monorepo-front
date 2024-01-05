@@ -24,22 +24,43 @@
   "rules": {
     "no-alert": "off",
     "no-new": "off",
+    "no-plusplus": "off",
     "no-useless-escape": "off",
     "no-promise-executor-return": "off",
     "no-useless-catch": "off",
     "react/require-default-props": "off",
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
     "react-hooks/exhaustive-deps": "off",
     "react/jsx-props-no-spreading": 0,
     "react/prop-types": "off",
     "react/function-component-definition": 0,
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-use-before-define": "off",
-    "react/jsx-filename-extension": ["warn", { "extensions": [".ts", ".tsx"] }],
+    "react/jsx-filename-extension": [
+      "warn",
+      {
+        "extensions": [".ts", ".tsx"]
+      }
+    ],
     "react/jsx-no-useless-fragment": "off",
     "react/no-array-index-key": "off",
-    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
-    "jsx-a11y/label-has-associated-control": [2, { "labelAttributes": ["htmlFor"] }],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        "labelAttributes": ["htmlFor"]
+      }
+    ],
     "tailwindcss/classname-order": "off",
     "tailwindcss/no-custom-classname": "off",
     "import/prefer-default-export": "off",

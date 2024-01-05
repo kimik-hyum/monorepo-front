@@ -1,26 +1,19 @@
-import { forwardRef } from "react";
+import { forwardRef } from 'react'
 
-export interface ButtonProps {
-  primary?: boolean;
-  backgroundColor?: string;
-  size?: "small" | "medium" | "large";
-  label: string;
-  onClick?: () => void;
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  label: string
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ label, ...props }, ref) => {
+  ({ label, className = 'rounded-md px-4 h-12', ...props }, ref) => {
     return (
-      <button
-        type="button"
-        ref={ref}
-        className="overflow-wrap break-word flex min-h-12 items-center rounded-md bg-blue-500 px-4 text-white hover:bg-blue-300"
-        {...props}
-      >
-        {label}
-      </button>
-    );
+      <>
+        <button type="button" ref={ref} {...props} className={`bg-blue-500 text-white hover:bg-blue-300 ${className}`}>
+          {label}
+        </button>
+      </>
+    )
   },
-);
+)
 
-Button.displayName = "Button";
+Button.displayName = 'Button'
