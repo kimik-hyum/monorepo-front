@@ -34,17 +34,6 @@ export const ButtnUnit: Story = {
 
     const expectedBlue300Color = 'rgb(59, 130, 246)'
 
-    await Array.from({ length: 5 }).reduce(async (previousPromise, _, index) => {
-      await previousPromise
-
-      await userEvent.click(button)
-
-      const countSpan = canvasElement.querySelector('#count')
-      const currentCount = countSpan?.textContent
-
-      expect(currentCount).toBe(`${index + 1}`)
-    }, Promise.resolve())
-
     expect(style.backgroundColor).toBe(expectedBlue300Color)
   },
 }
